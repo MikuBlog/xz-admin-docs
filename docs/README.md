@@ -4,7 +4,7 @@ heroImage: /logo/logo.png
 heroText: XZ-ADMIN
 tagline: 让一切复杂的应用都从简单的开发开始！
 actionText: 快速上手 →
-actionLink: /guide/
+actionLink: /guide/develope/quick_start
 features:
 - title: 技术栈
   details: 使用了Vue、ElementUI、Spring Boot、Redis、JPA等前后端前沿技术开发。

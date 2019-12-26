@@ -9,7 +9,7 @@ module.exports = {
 		sidebarDepth: 3,
 		smoothScroll: true,
 		nav: [
-		  { text: '指南', link: '/guide/' },
+		  { text: '指南', link: '/guide/develope/quick_start' },
 		  { text: 'API', link: '/api/front_end' },
 			{ text: '部署', link: '/online/front_end' },
 			{ text: '日志', link: '/update/' },
@@ -26,32 +26,32 @@ module.exports = {
 				title: "指南",
 				collapsable: false,
 				children: [
-					'/guide/',
-					'/guide/develope/front_end',
-					'/guide/develope/back_end',
+					'develope/quick_start',
+					'develope/front_end',
+					'develope/back_end',
 				]
 			}, {
 				title: "其他",
 				collapsable: false,
 				children: [
-					'/guide/other/question',
-					'/guide/other/tips'
+					'other/question',
+					'other/tips'
 				]
 			}],
-			'/api/front_end': [{
+			'/api/': [{
 				title: "API",
 				collapsable: false,
 				children: [
-					'/api/front_end',
-					'/api/back_end'
+					'front_end',
+					'back_end'
 				]
 			}],
 			'/online/': [{
 				title: "部署",
 				collapsable: false,
 				children: [
-					'/online/front_end',
-					'/online/back_end'
+					'front_end',
+					'back_end'
 				]
 			}]
 		}
