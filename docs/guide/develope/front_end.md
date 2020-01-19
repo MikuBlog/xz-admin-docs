@@ -31,9 +31,24 @@
 
 ## 添加页面
 
+<br/>
+
+### 带权限页面
+
 页面统一存放在`src/views`目录下。
 
-页面创建好后，在菜单管理模块添加对应的菜单项，填写组件路径即可动态生成路由。
+页面创建好后，在菜单管理模块添加对应的菜单项，填写页面组件路径即可动态生成路由。
+
+页面组件路径默认在`src/views`目录下。在菜单管理中设置组件路径为`/menu/index`则会被解析为`src/views/menu/index`。
+
+### 公共页面
+
+对于公共页面（如登录页面）的添加按如下步骤进行：
+
+1. 在`src/global/js/pages.js`文件下往数组里添加路由名称
+2. 在`src/router/router.js`文件下注册组件，带上相应的`name`
+
+> 建议页面放在`src/common_views`下
 
 <br/>
 
@@ -202,14 +217,14 @@ export default {
 // 布尔类型的值改为false则表示不允许设置
 export default {
   // 登录标题
-  loginHeader: "XZ-Admin",
+  loginHeader: "XZ-ADMIN",
   // 自定义登录界面按钮
   loginSetting: true,
   // 合作网站账号登录框
   otherLoginMethods: true,
   // 自动登录框
   isAutoLogin: true,
-  // 菜单颜色
+  // 菜单风格
   menuStyle: {
     light: {
       textColor: '#444',
@@ -220,10 +235,40 @@ export default {
       textColor: '#becad8',
       backgroundColor: '#2f4055',
       subMenuItemBackgroundColor: '#1e2c3c'
-    }
+    },
+  	// 设置后将无法通过主题色进行修改
+  	activeTextColor: ""
   },
-  // 系统样式设置
+  // 系统样式默认配置项
+  default: {
+  	// 默认主题颜色
+  	themeColor: "#409eff",
+  	// 默认布局大小
+  	layoutSize: 'medium',
+  	// 默认主题样式(lightMode/darkMode/weaknessMode/hueRotateMode)
+  	themeStyle: 'lightMode',
+  	// 默认系统亮度
+  	brightness: 100,
+  	// 默认菜单风格(light/dark)
+  	menuStyleType: 'light',
+  	// 默认菜单布局(true为垂直,false为水平)
+  	menuLayout: true,
+  	// 默认显示Logo
+  	showLogo: true,
+  	// 默认显示标签页
+  	showTags: true,
+  	// 默认显示面包屑
+  	showBreadcrumb: true,
+  	// 默认显示页脚
+  	showFooter: true
+  },
+  // 系统样式允许配置项
   diy: {
+  	/* 动画 */
+  	// 路由过渡动画
+  	routerAnimation: true,
+  	// 面包屑过渡动画
+  	breadcrumbAnimation: true,
     /* 系统布局模块 */
     layout: true,
     // 系统布局大小
@@ -261,14 +306,15 @@ export default {
     // 选择背景按钮
     selectBackrgoundButton: true,
   },
-  // 布局透明元素（系统设置中的背景设置）
+  // 布局透明元素（系统设置-->背景设置-->布局透明度）
   layoutOpacity: [
     '.el-card',
-    '.el-scrollbar',
     '.el-header',
+    '.menu-scrollbar',
+    '.menu-horizontal-scrollbar',
     '.tabs',
     '.el-footer',
-    '.opacity-box'
+    '.opacity-box',
   ],
   // 不受主题影响的元素（标签、类、id）
   excludeEles: [
@@ -295,6 +341,8 @@ export default {
   clearStorage: true,
   // 系统设置icon
   systemSetting: true,
+  // 错误日志icon
+  errorLog: true,
   // 全屏icon
   fullScreen: true,
   // 分页组件

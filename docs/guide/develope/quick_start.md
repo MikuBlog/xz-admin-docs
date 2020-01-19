@@ -144,10 +144,10 @@ npm run serve
 ```
 │  ├─menu // 页面模块名称
 │  │  ├─components // 页面组件
-│  │  └─style // 页面样式
+│  │  └─scss // 页面样式
 │  │  │  └─index.scss
 │  │  └─data // 静态数据模块
-│  │  └─mixins // 业务逻辑模块
+│  │  └─js // 业务逻辑模块
 │  │  │  └─initial.js // 初始化文件
 │  │  │  └─operation.js // 页面逻辑文件
 │  │  │  └─property.js // 响应式属性管理文件
