@@ -162,8 +162,8 @@ this.$hueRotateMode(false) // 关闭转换模式
 参数：
 
 + `list`: 需要排序的数组 [`Array`]（必填）
-+ `isDes`: 是否倒序[`Boolean`]（选填：默认为false）
 + `property`: 对象排序字段[`String`]（选填：默认为空）
++ `isDes`: 是否倒序[`Boolean`]（选填：默认为false）
 
 返回值：`Array`
 
@@ -172,7 +172,7 @@ this.$hueRotateMode(false) // 关闭转换模式
 let list = [{ name: "旋仔", level: 3 }, 
 { name: "旋仔", level: 1 }, 
 { name: "旋仔", level: 2 }]
-this.$sortList(list, true, 'level') // [{ name: "旋仔", level: 3 }, { name: "旋仔", level: 2 }, { name: "旋仔", level: 1 }]
+this.$sortList(list, 'level', true) // [{ name: "旋仔", level: 3 }, { name: "旋仔", level: 2 }, { name: "旋仔", level: 1 }]
 ```
 
 ### searchResult
@@ -450,6 +450,104 @@ this.$dateDiff(new Date('2019-11-05'), new Date('2019-11-01')) // 4
 this.$dateDiff(new Date('2019-11-01'), new Date('2019-11-05')) // 4
 this.$dateDiff(new Date('2019-11-05'), new Date('2019-11-01'), true) // 4
 this.$dateDiff(new Date('2019-11-01'), new Date('2019-11-05'), true) // -4
+```
+
+### timeDiff
+
+描述：两个日期的时间差
+
+参数：
+
++ `time_1`: 结束时间[`Date`]（必填）
++ `time_2`: 开始时间[`Date`]（必填）
+
+返回值：`String`
+
+示例：
+```js
+this.$timeDiff(new Date('2019-11-05 12:00:00'), new Date('2019-11-05 10:45:00')) // { time: '01:15:00', hour: 1, min: 15, ses: 0, totalSes: 4500}
+```
+
+### getFirstDate
+
+描述：获取本月第一天
+
+返回值：`String`
+
+示例：
+```js
+this.$getFirstDate()
+```
+
+### getFirstDate
+
+描述：获取本月最后一天
+
+返回值：`String`
+
+示例：
+```js
+this.$getLastDate()
+```
+
+### getPreMonth
+
+描述：获取前n个月
+
+参数：
+
++ `n`: 前n个月[`Number`]（必填）
+
+返回值：`String`
+
+示例：
+```js
+this.$getPreMonth(3) // 前3个月
+```
+
+### getPreDate
+
+描述：获取前n天
+
+参数：
+
++ `n`: 前n天[`Number`]（必填）
+
+返回值：`String`
+
+示例：
+```js
+this.$getPreDate(3) // 前3天
+```
+
+### getAfterMonth
+
+描述：获取前n天
+
+参数：
+
++ `n`: 后n个月[`Number`]（必填）
+
+返回值：`String`
+
+示例：
+```js
+this.$getAfterMonth(3) // 后3个月
+```
+
+### getAfterDate
+
+描述：获取前n天
+
+参数：
+
++ `n`: 后n天[`Number`]（必填）
+
+返回值：`String`
+
+示例：
+```js
+this.$getAfterDate(3) // 后3天
 ```
 
 ## storage

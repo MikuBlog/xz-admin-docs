@@ -47,7 +47,7 @@
 
 1. 在`src/global/js/pages.js`文件下往数组里添加路由名称
 2. 在`src/router/router.js`文件下注册组件，带上相应的`name`
-
+ 
 > 建议页面放在`src/common_views`下
 
 <br/>
