@@ -1,5 +1,3 @@
-# 前端
-
 ## copyText
 
 描述：复制文本
@@ -11,7 +9,6 @@
 示例
 ```js
 this.$copyText("xuanzai")
-
 this.$copyText(this.$refs.contentBox)
 ```
 
@@ -31,7 +28,6 @@ this.$copyText(this.$refs.contentBox)
 示例：
 ```js
 this.$urlQuery([url]) // url: http://myinterface.xuanzai.top/getPicture?type=头像&id=1  result: { type: '头像', id: 1 }
-
 ```
 
 ## print
@@ -194,6 +190,37 @@ this.$searchResult(list, ['name'], '旋仔') // [{ name: "旋仔", age: 20 }]
 this.$searchResult(list, ['name'], 'xxx') // []
 ```
 
+### removeRepeat
+
+描述：数组去重
+
+注意：如果数组元素为对象，仅对key值为第一层的对象进行去重
+
+参数：
+
++ `arr`: 需要排序的数组 [`Array`]（必填）
++ `key`: 对象去重字段[`String`]（选填：默认为空）
+
+返回值：`Array`
+
+示例：
+```js
+const arr_1 = [1, 2, 3, 2, 1]
+this.$removeRepeat(arr_1) // [1, 2, 3]
+const arr_2 = [{
+	value: "123"
+}, {
+	value: "321"
+}, {
+	value: "123"
+}, {
+	value: "321"
+}, {
+	value: "123"
+}]
+this.$removeRepeat(arr_1, 'value') // [{ value: "123" }, { value: "321" }]
+```
+
 ## control
 
 ### debounce
@@ -335,7 +362,7 @@ this.$download(url, fileName)
 返回值：`Promise`
 
 + `raw`：二进制文件
-+ `url`: base64图像文件
++ `url`: base64
 
 示例：
 ```js
@@ -365,6 +392,24 @@ this
 	.then(raw => {
 		// todo
 	})
+```
+
+###  dataUrlToFile
+
+描述：base64转为file
+
+参数：
+
++ `dataurl`：base64字符串[`String`]
++ `filename`：文件名[`String`]
+
+返回值：`File`
+
++ `raw`：二进制文件
+
+示例：
+```js
+this.$dataUrlToFile(base64, 'file') // 返回File实例
 ```
 
 ### previewFile
@@ -399,20 +444,6 @@ this.$exportExcel(document.querySelector('table'), 'data') // 导出一整个表
 this.$exportExcel(document.querySelectorAll('tr'), 'data') // 导出选中元素的表格（数组元素必须为tr标签元素）
 ```
 
-### exportFile
-
-描述：批量导出文件并以`zip`文件保存（包括图片、excel、word等各种类型的文件，自带`tips`以及`loading`）
-
-参数：
-
-+ `fileList`：文件地址列表 [Array]（必填）
-+ `fileName`：压缩文件名称 [String]（选填：默认为file）
-
-示例：
-```js
-this.$exportFile(fileList, 'images')
-```
-
 ## Date
 
 日期格式化方法。
@@ -425,6 +456,8 @@ this.$exportFile(fileList, 'images')
 
 + `date`: 日期对象[`Date`]（必填）
 + `isAccurate`: 是否精确到时分秒[`Boolean`]（选填：默认为false）
+
+返回值：`String`
 
 示例：
 ```js
@@ -576,6 +609,8 @@ this.$setMemorySes("name", "xuanzai")
 
 + `key`: 键 [`String`]（必填）
 
+返回值：根据`this.$setMemorySes`的值决定
+
 示例：
 ```js
 this.$getMemorySes("name")
@@ -602,6 +637,8 @@ this.$setMemoryPmt("name", "xuanzai")
 参数：
 
 + `key`: 键 [`String`]（必填）
+
+返回值：根据`this.$setMemoryPmt`的值决定
 
 示例：
 ```js

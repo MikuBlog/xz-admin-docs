@@ -11,15 +11,10 @@ module.exports = {
 		nav: [
 		  { text: '指南', link: '/guide/develope/quick_start' },
 		  { text: 'API', link: '/api/front_end' },
+			{ text: 'Utils', link: '/utils/front_end' },
 			{ text: '部署', link: '/online/front_end' },
 			{ text: '日志', link: '/update/' },
-		  { 
-				text: '项目地址', 
-				items: [
-					{ text: "前端项目地址", link: "https://github.com/MikuBlog/xz-admin" },
-					{ text: "后台项目地址", link: "" },
-				],
-			},
+		  { text: '项目地址', link: "https://github.com/MikuBlog/xz-admin" },
 		],
 		sidebar: {
 			'/guide/': [{
@@ -27,8 +22,7 @@ module.exports = {
 				collapsable: false,
 				children: [
 					'develope/quick_start',
-					'develope/front_end',
-					'develope/back_end',
+					'develope/front_end'
 				]
 			}, {
 				title: "其他",
@@ -42,16 +36,21 @@ module.exports = {
 				title: "API",
 				collapsable: false,
 				children: [
-					'front_end',
-					'back_end'
+					'front_end'
+				]
+			}],
+			'/utils/': [{
+				title: "Utils",
+				collapsable: false,
+				children: [
+					'front_end'
 				]
 			}],
 			'/online/': [{
 				title: "部署",
 				collapsable: false,
 				children: [
-					'front_end',
-					'back_end'
+					'front_end'
 				]
 			}]
 		}
