@@ -47,7 +47,7 @@ sever {
   vim /etc/yum.repos.d/nginx.repo
   ```
 
-  - 填入配置信息并保存退出
+  - 填入配置信息并保存退出(`:wq`命令)
 
   ```
   [nginx]
@@ -154,6 +154,62 @@ nginx -s reload
 <br/>
 
 > 打开浏览器输入您的域名，按下回车键，开始你的愉快分享之旅吧！
+
+<br/>
+<br/>
+
+## 配置nodejs
+
+- 回到服务器根目录
+
+- 下载`node.js`
+
+```
+wget https://npm.taobao.org/mirrors/node/v12.4.0/node-v12.4.0-linux-x64.tar.xz
+```
+
+- 解压
+
+```
+tar -xvf node-v12.4.0-linux-x64.tar.xz
+```
+
+- 进入`bin`目录
+
+```
+cd node-v12.4.0-linux-x64/bin
+```
+
+- 测试
+
+```
+./node -v # 如果出现版本号即安装成功
+```
+
+- 关联并全局使用
+
+```
+ln -s /node-v12.4.0-linux-x64/bin/node /usr/local/bin/node
+
+ln -s /node-v12.4.0-linux-x64/bin/npm /usr/local/bin/npm
+```
+
+<br/>
+<br/>
+
+## 配置cnpm
+
+- 安装`cnpm`(前提是已经安装好`node`并全局关联)
+
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+- 关联`cnpm`
+
+```
+ln -s /node-v12.4.0-linux-x64/bin/npm /usr/local/bin/cnpm
+```
 
 <br/>
 <br/>

@@ -61,79 +61,79 @@ npm run serve
 └─views // 页面
     ├─article
     ├─chart
-    │  ├─mixins
+    │  ├─js
     │  └─style
     ├─common
     │  ├─editor
     │  ├─file
     │  ├─icon
-    │  │  ├─mixins
+    │  │  ├─js
     │  │  └─style
     │  └─markdown
-    │      └─mixins
+    │      └─js
     ├─docs
     ├─error
     ├─introduction
     ├─Layout
     │  ├─components
-    │  ├─mixins
+    │  ├─js
     │  └─style
     ├─log
     │  ├─authority_log
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─exception_log
-    │  │  └─mixins
+    │  │  └─js
     │  └─operation_log
-    │      └─mixins
+    │      └─js
     ├─login
-    │  ├─mixins
+    │  ├─js
     │  └─style
     ├─menu_1
     ├─menu_2
     ├─menu_3
     ├─monitor
     │  ├─online_user
-    │  │  └─mixins
+    │  │  └─js
     │  └─redis_manage
-    │      └─mixins
+    │      └─js
     ├─order
     ├─person
     │  └─components
     ├─system
     │  ├─authority
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─department
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─dictionary
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─menu
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─role
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─station
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  └─user
     │      ├─components
-    │      └─mixins
+    │      └─js
     ├─tools
     │  ├─file
     │  │  └─components
     │  ├─generator
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  ├─mission
     │  │  ├─components
-    │  │  └─mixins
+    │  │  └─js
     │  └─picture
     │      ├─components
-    │      └─mixins
+    │      └─js
     └─welcome
 ```
 

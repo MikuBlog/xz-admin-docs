@@ -501,6 +501,22 @@ this.$dateDiff(new Date('2019-11-01'), new Date('2019-11-05'), true) // -4
 this.$timeDiff(new Date('2019-11-05 12:00:00'), new Date('2019-11-05 10:45:00')) // { time: '01:15:00', hour: 1, min: 15, ses: 0, totalSes: 4500}
 ```
 
+### dateToChinese
+
+描述：修改为中文日期格式
+
+参数：
+
++ `date`: 时间[`String` | `Date`]（必填）
+
+返回值：`String`
+
+示例：
+```js
+this.$dateToChinese(new Date('2019-11-05 12:00:00')) // 2019年11月5日 12:00:00
+this.$dateToChinese('2019-11-05 12:00:00') // 2019年11月5日 12:00:00
+```
+
 ### getFirstDate
 
 描述：获取本月第一天

@@ -15,7 +15,7 @@ var
 
 示例:
 ```js
-import { convertHttp } from '@/utils/form_validate'
+import { convertHttp } from '@/utils/convertHttp'
 
 // 返回由prefixUrl拼接的网络地址
 const imageUrl = convertHttp(val.image) // prefixUrl + val.image
@@ -58,14 +58,24 @@ type.isDate(val) // 判断值是否为日期类型
 
 示例:
 ```js
-import { validateMobile, validatePhone } from '@/utils/form_validate'
+import { 
+  validateMobile, 
+  validatePhone, 
+  validateBothPhMob } 
+from '@/utils/form_validate'
 
 rules: {
+  // 验证电话号码
 	phone: [{
 		{ required: true, trigger: "change", validator: validatePhone }
-	}],
+  }],
+  // 验证手机号码
 	mobile: [{
 		{ required: true, trigger: "change", validator: validateMobile }
+  }],
+  // 验证手机或电话号码
+  phMob: [{
+		{ required: true, trigger: "change", validator: validateBothPhMob }
 	}]
 }
 ```
