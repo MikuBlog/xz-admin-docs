@@ -455,7 +455,7 @@ this.$exportExcel(document.querySelectorAll('tr'), 'data') // 导出选中元素
 参数：
 
 + `date`: 日期对象[`Date`]（必填）
-+ `isAccurate`: 是否精确到时分秒[`Boolean`]（选填：默认为false）
++ `isAccurate`: 是否精确到时分秒[`Boolean`]（选填：默认为`false`）
 
 返回值：`String`
 
@@ -467,136 +467,121 @@ this.$formatDate(new Date(), true) // 2019-11-05 10:06:31
 
 ### dateDiff
 
-描述：两个日期的天数差
+描述：两个日期的时间差
 
 参数：
 
 + `sDate1`: 结束日期[`Date`]（必填）
 + `sDate2`: 开始日期[`Date`]（必填）
-+ `isNegative`: 只能是结束日期减开始日期，返回的值可能为负值（选填：默认为false）
++ `isNegative`: 只能是结束日期减开始日期，返回的值可能为负值（选填：默认为`false`）
 
-返回值：`Number`
+返回值：`Object`
 
 示例：
 ```js
-this.$dateDiff(new Date('2019-11-05'), new Date('2019-11-01')) // 4
-this.$dateDiff(new Date('2019-11-01'), new Date('2019-11-05')) // 4
-this.$dateDiff(new Date('2019-11-05'), new Date('2019-11-01'), true) // 4
-this.$dateDiff(new Date('2019-11-01'), new Date('2019-11-05'), true) // -4
+this.$dateDiff(new Date('2019-11-05'), new Date('2019-11-01'))
+// { 时间戳 stamp: xxx, 相差总秒数 seconds:xxx, 相差总分钟数 minutes: xxx, 相差总小时数 hours: xxx, 相差总天数 days: xxx, 相差总星期数 weeks: xxx, 时分秒 times: xxx}
 ```
 
-### timeDiff
+### setDay
 
-描述：两个日期的时间差
+描述：设置日期
 
 参数：
 
-+ `time_1`: 结束时间[`Date`]（必填）
-+ `time_2`: 开始时间[`Date`]（必填）
++ `date`: 日期[`Date`]（必填）
++ `number`: 天数[`Number`]（选填，默认为0）
++ `isAccurate`: 是否精确到时分秒[`Boolean`]（选填，默认为`false`）
 
 返回值：`String`
 
 示例：
 ```js
-this.$timeDiff(new Date('2019-11-05 12:00:00'), new Date('2019-11-05 10:45:00')) // { time: '01:15:00', hour: 1, min: 15, ses: 0, totalSes: 4500}
+this.$setDay(new Date(), 3, true) // 返回后三天 YYYY-MM-DD HH:mm:ss
+this.$setDay(new Date(), -3, false) // 返回前三天 YYYY-MM-DD
 ```
 
-### dateToChinese
+### setMonth
 
-描述：修改为中文日期格式
+描述：设置月份
 
 参数：
 
-+ `date`: 时间[`String` | `Date`]（必填）
++ `date`: 日期[`Date`]（必填）
++ `number`: 天数[`Number`]（选填，默认为0）
++ `isAccurate`: 是否精确到时分秒[`Boolean`]（选填，默认为`false`）
 
 返回值：`String`
 
 示例：
 ```js
-this.$dateToChinese(new Date('2019-11-05 12:00:00')) // 2019年11月5日 12:00:00
-this.$dateToChinese('2019-11-05 12:00:00') // 2019年11月5日 12:00:00
+this.$setMonth(new Date(), 3, true) // 返回后三个月 YYYY-MM-DD HH:mm:ss
+this.$setMonth(new Date(), -3, false) // 返回前三个月 YYYY-MM-DD
 ```
 
-### getFirstDate
+### setYear
 
-描述：获取本月第一天
-
-返回值：`String`
-
-示例：
-```js
-this.$getFirstDate()
-```
-
-### getFirstDate
-
-描述：获取本月最后一天
-
-返回值：`String`
-
-示例：
-```js
-this.$getLastDate()
-```
-
-### getPreMonth
-
-描述：获取前n个月
+描述：设置年份
 
 参数：
 
-+ `n`: 前n个月[`Number`]（必填）
++ `date`: 日期[`Date`]（必填）
++ `number`: 天数[`Number`]（选填，默认为0）
++ `isAccurate`: 是否精确到时分秒[`Boolean`]（选填，默认为`false`）
 
 返回值：`String`
 
 示例：
 ```js
-this.$getPreMonth(3) // 前3个月
+this.$setYear(new Date(), 3, true) // 返回后三年 YYYY-MM-DD HH:mm:ss
+this.$setYear(new Date(), -3, false) // 返回前三年 YYYY-MM-DD
 ```
 
-### getPreDate
+### setDate
 
 描述：获取前n天
 
 参数：
 
-+ `n`: 前n天[`Number`]（必填）
++ `date`: 日期[`Date`]（必填）
++ `options`: 天数[`Object`]（选填，默认为0）
+	+ `years`: 年份[`Number`]（选填，默认为0）
+	+ `quarters`: 季度[`quarters`]（选填，默认为0）
+	+ `months`: 月份[`Number`]（选填，默认为0）
+	+ `weeks`: 周[`Number`]（选填，默认为0）
+	+ `days`: 天[`Number`]（选填，默认为0）
+	+ `hours`: 小时[`Number`]（选填，默认为0）
+	+ `minutes`: 分钟[`Number`]（选填，默认为0）
+	+ `seconds`: 秒[`Number`]（选填，默认为0）
+	+ `milliseconds`: 毫秒[`Number`]（选填，默认为0）
++ `rules`: 时间规则[`String`]（选填，默认为`YYYY-MM-DD HH:mm:ss`）
 
-返回值：`String`
+返回值：`Object`
 
 示例：
 ```js
-this.$getPreDate(3) // 前3天
+this.$setDate(new Date(), {
+	years: 1
+}) // 当前时间往后加一年 YYYY-MM-DD HH:mm:ss
+this.$setDate(new Date(), {
+	months: -1,
+	hours: 1
+}, 'YYYY-MM') // 当前时间减一个月并加一个小时 YYYY-MM
 ```
 
-### getAfterMonth
+### fromNow
 
-描述：获取前n天
+描述：获取相对时间
 
 参数：
 
-+ `n`: 后n个月[`Number`]（必填）
++ `date`: 相对于现在的日期[`Date`]（默认为当前时间）
 
 返回值：`String`
 
 示例：
 ```js
-this.$getAfterMonth(3) // 后3个月
-```
-
-### getAfterDate
-
-描述：获取前n天
-
-参数：
-
-+ `n`: 后n天[`Number`]（必填）
-
-返回值：`String`
-
-示例：
-```js
-this.$getAfterDate(3) // 后3天
+this.$fromNow(new Date()) // 几秒前
 ```
 
 ## storage
