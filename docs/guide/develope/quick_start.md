@@ -17,6 +17,20 @@ npm install
 npm run serve
 ```
 
+#### 温馨提示
+
+如果嫌弃`npm`安装速度过慢，可以切换到淘宝镜像再使用`cnpm`进行安装
+
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+然后再执行
+
+```
+cnpm install
+```
+
 ## 目录结构
 
 ```

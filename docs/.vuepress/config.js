@@ -14,7 +14,13 @@ module.exports = {
 			{ text: 'Utils', link: '/utils/front_end' },
 			{ text: '部署', link: '/online/front_end' },
 			{ text: '日志', link: '/update/' },
-		  { text: '项目地址', link: "https://github.com/MikuBlog/xz-admin" },
+		  { text: '友情链接',
+		  	items: [
+		  		{ text: '项目地址', link: "https://github.com/MikuBlog/xz-admin" },
+		  		{ text: 'xz-uni-docs', link: "http://xzuni-docs.xuanzai.top" },
+		  		{ text: 'uni-app-resp', link: "https://github.com/MikuBlog/uni-app-resp" }
+		  	]
+		  },
 		],
 		sidebar: {
 			'/guide/': [{
