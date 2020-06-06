@@ -45,8 +45,31 @@
 
 对于公共页面（如登录页面）的添加按如下步骤进行：
 
-1. 在`src/global/js/pages.js`文件下往数组里添加路由名称
-2. 在`src/router/router.js`文件下注册组件，带上相应的`name`
+1. 在`src/router/router.js`文件下注册组件，带上相应的`name`
+
+示例：
+```js
+const router = new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+	// 新页面"news"
+  routes: [{
+    path: '/news',
+    name: 'news',
+    component: () => import('@/common_views/news/index')
+  }] 
+})
+```
+
+2. 在`src/global/js/pages.js`文件下往数组里添加路由名称
+
+示例：
+```js
+// 新增"news"公共页面
+export default [
+	"news"
+]
+```
  
 > 建议页面放在`src/common_views`下
 
