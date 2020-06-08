@@ -425,11 +425,12 @@ this
 
 描述：获取文件信息
 
-参数：
+`options`参数：
 
 参数 | 类型 | 必填 | 说明
 - | - | - | -
 limit | Number | 否 | 文件大小，默认限制文件大小为`2M`
+fileType | String | 否 | 文件类型
 
 返回值：`Promise`
 
@@ -437,10 +438,18 @@ limit | Number | 否 | 文件大小，默认限制文件大小为`2M`
 - | - | -
 raw | File | 文件对象
 
+`fileType`示例：
+
+[查阅文档](https://blog.csdn.net/usuallyuser/article/details/83060341)
+
 示例：
 ```js
+// 选择xls、xlsx中的文件
 this
-	.$getFile(limit)
+	.$getFile({
+		limit: 2,
+		fileType: "application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+	})
 	.then(raw => {
 		// todo
 	})
