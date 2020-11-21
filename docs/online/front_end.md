@@ -24,7 +24,7 @@ npm run build
 - 找到`http`域并另起一行，加入如下代码：
 
 ```
-sever {
+server {
   listen 80;
   server_name xxx.com;#(您的域名)
   location / {

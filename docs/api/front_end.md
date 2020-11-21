@@ -416,7 +416,7 @@ url | String | base64字符串
 ```js
 this
 	.$getImgFile(limit)
-	.then((raw, url) => {
+	.then(res => { // res: { raw: xxx, url: xxx }
 		// todo
 	})
 ```

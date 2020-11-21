@@ -23,3 +23,36 @@ encodeURI(url)
 `IE`浏览器与`IOS`系统的所有浏览器都不支持`new Date('yyyy-MM-hh')`
 
 请将日期格式转化为`new Date('yyyy/mm/hh')`（该日期格式对所有浏览器兼容），防止因日期格式不统一而出现浏览器兼容性问题
+
+<br/>
+
+
+
+## 运行项目时报错
+
+1. `url-loader`构建报错
+
+> Module build failed (from ./node_modules/url-loader/index.js)
+
+解决方法：安装最新依赖
+```
+npm/cnpm install url-loader@latest
+```
+
+<br/>
+
+2. 依赖缺少
+
+> Cannot find module 'xxxxx'
+
+解决方法：安装缺失依赖
+```
+npm/cnpm install xxxxx
+```
+
+<br/>
+
+3. 安装依赖完成后运行项目依旧有大量依赖缺失
+	- 请换一个网络很好的环境下删掉`node_modules`重新安装
+	- 网络好的情况下依旧大量依赖缺失，请删掉`node_modules`后使用`npm`重新安装
+
