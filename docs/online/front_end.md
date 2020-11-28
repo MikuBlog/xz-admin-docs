@@ -292,3 +292,61 @@ const
 ```
 
 修改保存即可
+
+<br/>
+<br/>
+
+## 打包成桌面程序
+
+- 安装依赖
+
+```
+npm/cnpm install electron -g @11.0.3
+
+npm/cnpm install electron-packager -g
+```
+
+- 修改`public_path.js`
+
+```js
+const path = require('path')
+module.exports = {
+  environment: process.env.NODE_ENV === 'production' ? '/' : '/',
+  editor: process.env.NODE_ENV === 'production' ? '/' : '/',
+  electron: path.resolve(__dirname, './dist'),
+  // 是否为桌面程序
+  isExe: true
+}
+```
+
+- 打包项目
+
+```
+npm/cnpm run build
+```
+
+- 将`electron`文件夹内的文件全部移至`dist`目录下
+
+- [下载打包文件并将压缩包放至`dist`目录下](https://npm.taobao.org/mirrors/electron/11.0.3/electron-v11.0.3-win32-x64.zip)
+
+```
+├─assets
+├─css
+├─fonts
+├─img
+├─js
+├─index.html
+├─main.js
+├─package.json
+└─xzadmin-win32-x64
+```
+
+- 在`dist`目录下打开命令行窗口
+
+```
+// 本地运行项目
+npm/cnpm run start
+
+// 打包exe文件
+npm/cnpm run package
+```
