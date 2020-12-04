@@ -329,6 +329,8 @@ npm/cnpm run build
 
 - [下载打包文件并将压缩包放至`dist`目录下](https://npm.taobao.org/mirrors/electron/11.0.3/electron-v11.0.3-win32-x64.zip)
 
+`dist`的目录结构需如下：
+
 ```
 ├─assets
 ├─css
@@ -338,7 +340,7 @@ npm/cnpm run build
 ├─index.html
 ├─main.js
 ├─package.json
-└─xzadmin-win32-x64
+└─electron-v11.0.3-win32-x64.zip
 ```
 
 - 在`dist`目录下打开命令行窗口
