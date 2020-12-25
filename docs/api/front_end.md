@@ -403,8 +403,8 @@ this.$download(url, fileName)
 
 参数 | 类型 | 必填 | 说明
 - | - | - | -
-limit | Number | 否 | 文件大小，默认限制文件大小为`2M`
-quality | Number | 否 | 文件质量，默认质量为`0.7`
+limit | Number | 否 | 图片大小，默认限制文件大小为`2M`
+quality | Number | 否 | 图片质量，默认质量为`0.7`
 
 返回值：`Promise`
 
@@ -476,10 +476,10 @@ raw | File | 文件对象
 示例：
 ```js
 this
-	.$compressFile({
+	.$compressFile(
 		file,
 		quality
-	})
+	)
 	.then(raw => {
 		// todo
 	})
@@ -489,10 +489,10 @@ this
 	.$getFile()
 	.then(file => {
 		this
-			.$compressFile({
+			.$compressFile(
 				file,
 				0.7
-			})
+			)
 			.then(raw => {
 				// todo
 			})
