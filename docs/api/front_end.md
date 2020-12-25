@@ -404,6 +404,7 @@ this.$download(url, fileName)
 参数 | 类型 | 必填 | 说明
 - | - | - | -
 limit | Number | 否 | 文件大小，默认限制文件大小为`2M`
+quality | Number | 否 | 文件质量，默认质量为`0.7`
 
 返回值：`Promise`
 
@@ -415,7 +416,7 @@ url | String | base64字符串
 示例：
 ```js
 this
-	.$getImgFile(limit)
+	.$getImgFile(limit, 0.7)
 	.then(res => { // res: { raw: xxx, url: xxx }
 		// todo
 	})
@@ -452,6 +453,49 @@ this
 	})
 	.then(raw => {
 		// todo
+	})
+```
+
+###  compressFile
+
+描述：获取文件信息
+
+`options`参数：
+
+参数 | 类型 | 必填 | 说明
+- | - | - | -
+file | file | 是 | 文件
+quality | Number | 否 | 文件质量，默认质量为`0.7`
+
+返回值：`Promise`
+
+参数 | 类型 | 说明
+- | - | -
+raw | File | 文件对象
+
+示例：
+```js
+this
+	.$compressFile({
+		file,
+		quality
+	})
+	.then(raw => {
+		// todo
+	})
+	
+// 常见用法
+this
+	.$getFile()
+	.then(file => {
+		this
+			.$compressFile({
+				file,
+				0.7
+			})
+			.then(raw => {
+				// todo
+			})
 	})
 ```
 
