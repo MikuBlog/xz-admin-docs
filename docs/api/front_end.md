@@ -456,9 +456,9 @@ this
 	})
 ```
 
-###  compressFile
+###  compressImageFile
 
-描述：获取文件信息
+描述：压缩图片文件
 
 `options`参数：
 
@@ -482,20 +482,6 @@ this
 	)
 	.then(raw => {
 		// todo
-	})
-	
-// 常见用法
-this
-	.$getFile()
-	.then(file => {
-		this
-			.$compressFile(
-				file,
-				0.7
-			)
-			.then(raw => {
-				// todo
-			})
 	})
 ```
 
