@@ -158,6 +158,71 @@ nginx -s reload
 <br/>
 <br/>
 
+### 宝塔
+
+- 访问宝塔链接（由服务器运维人员提供）
+
+> tips：第一次访问链接可能因为过期导致无法访问，访问链接一次后，重新访问http://xxxx/baota即可访问成功
+
+- 创建网站站点
+
+	- 选中管理端左侧"网站"菜单
+
+	- 点击"添加站点"按钮
+
+	- 按格式填写域名（只需填写一个）
+
+	- PHP版本选择为"纯静态"
+
+	- 点击"提交"即可
+
+- 配置服务器
+
+	- 选中管理端左侧"网站"菜单
+
+	- 点击配置好的网站名
+
+	- 选择弹窗左侧"配置文件"菜单
+
+	- 在配置文件页加入如下配置信息
+
+	示例：
+	```
+	location ~/ {
+		add_header 'Access-Control-Allow-Origin' '*';
+		add_header 'Access-Control-Allow-Credentials' 'true';
+		root /www/wwwroot/pdsh5.whalenect.com/h5; #只需修改这一行，这一行对应项目的路径
+		try_files $uri $uri/ /index.html;
+		index index.html;
+	}
+	```
+	只需要修改`root`部分，前面`/www/wwwroot`不变，后面一次是`域名/目录名`
+	
+	- 点击"保存"即可
+
+- 创建文件目录
+
+	- 选中管理端左侧"文件"菜单
+
+	- 找到`/www/wwwroot/xxxx`对应域名下的目录，并在域名目录下新建一个存放项目的文件目录（严格按照配置文件配置信息的路径创建文件目录）
+	
+	> tips：如上述配置文件的`root`为`/www/wwwroot/pdsh5.whalenect.com/h5`，则在`/www/wwwroot/pdsh5.whalenect.com`目录下创建一个`h5`目录
+	
+- 上传项目文件
+
+	- 项目打包
+
+	- 选中管理端左侧"文件"菜单
+
+	- 找到刚创建好的文件目录
+
+	- 点击"上传"按钮，将项目文件拖拽进上传弹窗里，点击"开始上传"，等待上传结束即可
+
+- 访问域名，查看项目是否访问成功
+
+<br/>
+<br/>
+
 ## 配置nodejs
 
 - 回到服务器根目录
