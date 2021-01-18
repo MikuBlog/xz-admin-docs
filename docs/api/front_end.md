@@ -942,6 +942,17 @@ this.$errorTip({ msg: "错误通知", title: "错误" })
 ```js
 this.$http_normal({
 	url: "/xxx/xxx",
+	method: "get",
+	parmas: {
+		name: "",
+		age: ""
+	}
+}).then(result => {
+	// todo
+})
+
+this.$http_normal({
+	url: "/xxx/xxx",
 	method: "post",
 	data: {
 		name: "",
@@ -962,6 +973,17 @@ this.$http_normal({
 
 示例：
 ```js
+this.$http_json({
+	url: "/xxx/xxx",
+	method: "get",
+	parmas: {
+		name: "",
+		age: ""
+	}
+}).then(result => {
+	// todo
+})
+
 this.$http_json({
 	url: "/xxx/xxx",
 	method: "post",
