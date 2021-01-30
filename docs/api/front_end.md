@@ -943,7 +943,7 @@ this.$errorTip({ msg: "错误通知", title: "错误" })
 this.$http_normal({
 	url: "/xxx/xxx",
 	method: "get",
-	parmas: {
+	params: {
 		name: "",
 		age: ""
 	}
@@ -976,7 +976,7 @@ this.$http_normal({
 this.$http_json({
 	url: "/xxx/xxx",
 	method: "get",
-	parmas: {
+	params: {
 		name: "",
 		age: ""
 	}
